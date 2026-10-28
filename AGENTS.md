@@ -24,6 +24,8 @@
 
 `scripts/install.ps1` 用目录联接把技能挂到目标项目的 `.qoder/skills/`。该脚本必须保留 UTF-8 BOM，否则 Windows PowerShell 5.1 会按 ANSI 解析中文并报语法错误。
 
+`scripts/install.sh` 是 macOS / Linux 版本，用符号链接实现，参数与 `install.ps1` 对应；改动任一个时保持两者行为一致。提交该脚本需保留可执行位：`git add --chmod=+x scripts/install.sh`。
+
 ## 验证
 
 - 改技能后执行 `install.ps1` 到临时项目，确认 `SKILL.md` 可读，卸载后源目录仍完整

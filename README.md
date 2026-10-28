@@ -82,7 +82,8 @@ rustup show home         # 应在 .penv/rust/... 内
 ├── .codex-plugin/
 │   └── plugin.json
 ├── scripts/
-│   └── install.ps1                  # 把技能联接到其他项目
+│   ├── install.ps1                  # Windows：目录联接安装到其他项目
+│   └── install.sh                   # macOS / Linux：符号链接安装到其他项目
 ├── templates/skill-template/        # 新建技能时复制的模板
 ├── AGENTS.md                        # 仓库约定（给 agent 读）
 ├── README.en.md
@@ -99,11 +100,19 @@ rustup show home         # 应在 .penv/rust/... 内
 | 其他项目 | 用 `scripts/install.ps1` 把技能联接到该项目 `.qoder/skills/` |
 
 ```powershell
+# Windows
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -ProjectRoot D:\work\demo
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Uninstall -ProjectRoot D:\work\demo
 ```
 
-`-Skill` 支持通配符。安装后重启会话或 `/skills reload`，用 `/skills list` 确认，再以 `/portable-env` 调用。junction 要求仓库与目标项目同卷，跨卷时会提示失败。
+```bash
+# macOS / Linux
+bash scripts/install.sh --project-root ~/work/demo
+bash scripts/install.sh --skill 'portable-*' --project-root ~/work/demo
+bash scripts/install.sh --uninstall --project-root ~/work/demo
+```
+
+`-Skill` / `--skill` 支持通配符。安装后重启会话或 `/skills reload`，用 `/skills list` 确认，再以 `/portable-env` 调用。Windows 用目录联接，要求仓库与目标项目同卷；macOS/Linux 用符号链接，无卷限制。
 
 ## 扩展这个仓库
 

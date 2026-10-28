@@ -82,7 +82,8 @@ rustup show home         # should point inside .penv/rust/...
 ├── .codex-plugin/
 │   └── plugin.json
 ├── scripts/
-│   └── install.ps1                  # junctions the skill into other projects
+│   ├── install.ps1                  # Windows: junctions the skill into other projects
+│   └── install.sh                   # macOS / Linux: symlinks the skill into other projects
 ├── templates/skill-template/        # template to copy when adding a skill
 ├── AGENTS.md                        # repository conventions for agents
 ├── README.md
@@ -99,11 +100,19 @@ rustup show home         # should point inside .penv/rust/...
 | Other projects | `scripts/install.ps1` junctions the skill into that project's `.qoder/skills/` |
 
 ```powershell
+# Windows
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -ProjectRoot D:\work\demo
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Uninstall -ProjectRoot D:\work\demo
 ```
 
-`-Skill` accepts wildcards. After installing, restart the session or run `/skills reload`, confirm with `/skills list`, then invoke `/portable-env`. Junctions require the repository and target project to share a volume; cross-volume targets report a failure.
+```bash
+# macOS / Linux
+bash scripts/install.sh --project-root ~/work/demo
+bash scripts/install.sh --skill 'portable-*' --project-root ~/work/demo
+bash scripts/install.sh --uninstall --project-root ~/work/demo
+```
+
+`-Skill` / `--skill` accepts wildcards. After installing, restart the session or run `/skills reload`, confirm with `/skills list`, then invoke `/portable-env`. Windows uses junctions, which require the repository and target project to share a volume; macOS and Linux use symbolic links with no volume restriction.
 
 ## Extending this repository
 
