@@ -1,0 +1,4 @@
+interface:
+  display_name: "<展示名称>"
+  short_description: "<一句话说明，≤80 字符>"
+  default_prompt: "Use $<skill-name> to <典型任务描述>."

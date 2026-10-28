@@ -1,0 +1,4 @@
+interface:
+  display_name: "Portable Env"
+  short_description: "Project-local portable multi-language dev environment"
+  default_prompt: "Use $portable-env to set up a project-local .penv environment for the runtimes declared in require.penv."

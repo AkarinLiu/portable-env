@@ -1,0 +1,8 @@
+# 安装脚本生成的项目内技能联接
+.qoder/skills/
+
+# 编辑器与系统
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

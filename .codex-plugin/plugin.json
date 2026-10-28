@@ -1,0 +1,33 @@
+{
+  "name": "portable-env",
+  "version": "0.1.0",
+  "description": "Project-local portable development environments for Bun, Node.js, Rust, PHP, Ruby, Python, Java, Zig, MariaDB and PostgreSQL, driven by a declarative require.penv file.",
+  "author": {
+    "name": "AkarinLiu",
+    "url": "https://github.com/AkarinLiu"
+  },
+  "repository": "https://github.com/AkarinLiu/portable-env",
+  "license": "MIT",
+  "keywords": [
+    "portable-environment",
+    "dev-environment",
+    "agent-skills",
+    "penv"
+  ],
+  "skills": "./.agents/skills",
+  "interface": {
+    "displayName": "Portable Env",
+    "shortDescription": "Project-local portable dev environments",
+    "longDescription": "Build extraction-based development environments inside a project's .penv directory. Runtimes and versions are declared in require.penv and activated per terminal session without version managers, PATH edits or registry writes.",
+    "developerName": "AkarinLiu",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use $portable-env to set up a .penv environment for the runtimes this project needs.",
+      "Use $portable-env to add Node.js and PostgreSQL to require.penv and activate them."
+    ]
+  }
+}

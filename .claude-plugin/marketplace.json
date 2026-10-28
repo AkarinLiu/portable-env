@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "portable-env",
+  "description": "Agent skills that build project-local, extraction-based development environments.",
+  "owner": {
+    "name": "AkarinLiu"
+  },
+  "plugins": [
+    {
+      "name": "portable-env",
+      "description": "Set up a .penv development environment for Bun, Node.js, Rust, PHP, Ruby, Python, Java, Zig, MariaDB and PostgreSQL declared in require.penv.",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

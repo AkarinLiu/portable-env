@@ -1,0 +1,18 @@
+{
+  "name": "portable-env",
+  "version": "0.1.0",
+  "description": "Project-local portable development environments for Bun, Node.js, Rust, PHP, Ruby, Python, Java, Zig, MariaDB and PostgreSQL, driven by a declarative require.penv file.",
+  "author": {
+    "name": "AkarinLiu",
+    "url": "https://github.com/AkarinLiu"
+  },
+  "repository": "https://github.com/AkarinLiu/portable-env",
+  "license": "MIT",
+  "keywords": [
+    "portable-environment",
+    "dev-environment",
+    "agent-skills",
+    "penv"
+  ],
+  "skills": "./.agents/skills"
+}
